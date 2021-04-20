@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person.finance</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header class='logotipo'>
+        Per$on.finance
+        
+    </header>
+    
+    <main class='conteudo-telaInicial'>
+        <section class='balanço'>
+            <h2 class='somenteLeitura'>Balanço</h2> <!-- esse somente leitura é para acessibilidade -->
+
+            <div class='card' onclick='Modal.abrirModal()'>
+                <h3>
+                    <span>
+                        Entradas 
+                    </span> <img class='img' src="assets/income.svg" alt="Entradas">
+                </h3>
+                <p id='displayEntrada'>R$ 0,00</p>
+                
+            </div>
+            <div class='card saida' onclick='abrirModalSaida()'>
+                <h3>
+                    <span>
+                        Saídas 
+                    </span> <img class='img' src="assets/expense.svg" alt="Saídas">
+                </h3>
+                    <p id='displaySaida'>R$ 0,00</p>
+                    
+            </div>
+            <div class='card total'>
+                <h3>
+                    <span>
+                        Total 
+                    </span> <img class='img' src="assets/total.svg" alt="">
+                </h3>
+                <p id='displayTotal'>R$ 0,00</p>
+                
+            </div>
+
+        </section>
+        <section id='transacoes'>
+            <h2 class='somenteLeitura'> Transações</h2>
+            <a href="#" class='novaTransacao'onclick='Modal.abrirModal()'> Nova transação</a>
+
+            <table id='tabelaDeDados'>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <div class='modalSobreposto'>
+        <div class='modal'>
+            <div class='formulario'>
+                <h2>TESTE ENTRADA</h2>
+                
+                <form action="" onsubmit="Formulario.submit(event)">
+                    <div class='grupoInputs'>
+                        <label class='somenteLeitura' for="descricao">Descrição</label>
+                        <input type="text" name="descrição" id="descricao" placeholder="Descrição">
+                    </div>
+
+                    <div class='grupoInputs'>
+                            
+                        <label class='somenteLeitura' for="valor">Valor</label>
+                        <input 
+                            type="number"
+                            name="valor"
+                            id="quantia"
+                            step='0.01'
+                            placeholder="0,00"
+                            class='grupoInputs placeholder'>
+
+                        <small class='help'> Use o sinal negativo para despesas e vírgula para casas decimais</small>
+                    </div>
+                    <div class='grupoInputs'>
+                        <label class='somenteLeitura' for="data">Data</label>
+                        <input type="date" name="data" id="data">
+
+                    </div>
+
+                    <div class='grupoInputs actions'>
+                        <a href="#" class='botãoFechar'
+                        onclick='Modal.fecharModal()'> Cancelar </a>
+                        <button> Salvar </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class='modalSobrepostoSaida'>
+        <div class='modal'>
+            <div class='formulario'>
+                <h2>TESTE SAIDA</h2>
+                
+                <form action="" onsubmit="Formulario.submit(event)">
+                    <div class='grupoInputs'>
+                        <label class='somenteLeitura' for="descricao">Descrição</label>
+                        <input type="text" name="descrição" id="descricao" placeholder="Descrição">
+                    </div>
+
+                    <div class='grupoInputs'>
+                            
+                        <label class='somenteLeitura' for="valor">Valor</label>
+                        <input 
+                            type="number"
+                            name="valor"
+                            id="quantia"
+                            step='0.01'
+                            placeholder="0,00"
+                            class='grupoInputs placeholder'>
+
+                        <small class='help'> Use o sinal negativo para despesas e vírgula para casas decimais</small>
+                    </div>
+                    <div class='grupoInputs'>
+                        <label class='somenteLeitura' for="data">Data</label>
+                        <input type="date" name="data" id="data">
+
+                    </div>
+
+                    <div class='grupoInputs actions'>
+                        <a href="#" class='botãoFechar'
+                        onclick='Modal.fecharModal()'> Cancelar </a>
+                        <button> Salvar </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <footer>Person.finance</footer>
+
+    <script src="./scripts.js"></script>
+</body>
+</html>
